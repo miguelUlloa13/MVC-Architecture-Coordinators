@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// - Parameter windowScene: The window scene
     func setUpView(windowScene: UIWindowScene) {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        let firstViewController = PokemonListViewController()
+        let firstViewController = CharacterListViewController()
         let nav = UINavigationController(rootViewController: firstViewController)
         window?.windowScene = windowScene
         window?.rootViewController = nav
