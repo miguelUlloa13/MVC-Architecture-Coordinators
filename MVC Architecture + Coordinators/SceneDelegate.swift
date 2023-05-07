@@ -17,6 +17,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+    
+        setUpView(windowScene: windowScene)
+        
+    }
+    
+    
+    /// Sets up first view when launching the app
+    /// - Parameter windowScene: The window scene
+    func setUpView(windowScene: UIWindowScene) {
+        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        let firstViewController = PokemonListViewController()
+        let nav = UINavigationController(rootViewController: firstViewController)
+        window?.windowScene = windowScene
+        window?.rootViewController = nav
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
