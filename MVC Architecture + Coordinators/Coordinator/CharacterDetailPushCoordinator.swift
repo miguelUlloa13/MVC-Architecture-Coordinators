@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class CharacterDetailPushCoordinator: Coordinator {
-    var viewController: UIViewController?
+
     var navigationController: UINavigationController?
 
     

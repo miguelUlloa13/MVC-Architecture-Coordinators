@@ -32,13 +32,13 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        characterImage.kf.setImage(with: URL(string: characterDataModel.image))
+        characterImage.kf.setImage(with: URL(string: characterDataModel.image!))
         setUpLabels()
     }
     
     private func setUpLabels(){
 
-        characterIDLbl.text = characterDataModel.id.description
+        characterIDLbl.text = characterDataModel.id?.description
         characterNameLbl.text = characterDataModel.name
         characterStatusLbl.text = characterDataModel.status
         characterSpecieLbl.text = characterDataModel.species

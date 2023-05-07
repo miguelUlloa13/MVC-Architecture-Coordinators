@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    var mainCoordinator: MainCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,22 +20,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
-    
-        setUpView(windowScene: windowScene)
+        
+        window = UIWindow (windowScene: windowScene)
+        let navigationController = UINavigationController()
+        mainCoordinator = MainCoordinator(navigationController: navigationController)
+        mainCoordinator?.start ()
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
         
     }
     
-    
-    /// Sets up first view when launching the app
-    /// - Parameter windowScene: The window scene
-    func setUpView(windowScene: UIWindowScene) {
-        window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        let firstViewController = CharacterListViewController()
-        let nav = UINavigationController(rootViewController: firstViewController)
-        window?.windowScene = windowScene
-        window?.rootViewController = nav
-        window?.makeKeyAndVisible()
-    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

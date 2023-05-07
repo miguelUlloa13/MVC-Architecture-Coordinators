@@ -7,8 +7,11 @@
 
 import Foundation
 
+/// /// Class to make the connection to the API.
 class ListOfCharactersAPIClient {
     
+    /// Gets the data
+    /// - Returns: The data or an Error
     func getListOfCharacters() async -> Result<CharacterDataModelResponse, NetworkError> {
         
         // Validate Url

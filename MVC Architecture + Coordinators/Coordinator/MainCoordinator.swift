@@ -18,7 +18,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let UINib = UINib(nibName: "nib file name", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
+        let characterListViewController = CharacterListViewController()
+        navigationController?.pushViewController(characterListViewController, animated: true)
     }
     
 }

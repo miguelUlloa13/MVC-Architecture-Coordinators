@@ -71,11 +71,11 @@ extension CharacterListViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = CharacterTableView.dequeueReusableCell(withIdentifier: "CharacterListTableViewCell", for: indexPath) as! CharacterListTableViewCell
         let character = characterList[indexPath.row]
         
-        cell.characterID.text = character.id.description
+        cell.characterID.text = character.id!.description
         cell.characterNameLbl.text = character.name
         cell.characterSpecie.text = character.species
  
-        cell.characterImage.kf.setImage(with: URL(string: character.image))
+        cell.characterImage.kf.setImage(with: URL(string: character.image!))
         
         
         return cell

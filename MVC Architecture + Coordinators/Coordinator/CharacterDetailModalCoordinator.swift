@@ -9,9 +9,8 @@ import Foundation
 import UIKit
 
 class CharacterDetailModalCoordinator: Coordinator {
+    
     var viewController: UIViewController?
-    var navigationController: UINavigationController?
-
     
     let characterModel: CharacterDataModel
 
